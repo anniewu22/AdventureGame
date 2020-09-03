@@ -79,97 +79,123 @@ ppl = {
 }
 
 
-playerName = input("What is your name? ")
-print("Welcome, to the Taverna {}!".format(playerName)) 
-
 
 
 def start_tavern():
 	print("There are some people who may talk to you. Who do you want to try talking to?")
-	print(ppl["tavernpeople"]["options"])
+	for key, value, in ppl["tavernpeople"]["options"].items():
+		print(key, ":", value)
 
 def go_places():
 	print("I think we got enough information here. Let's head out")
-	print(ppl["places"]["options"])
+	for key, value in ppl["places"]["options"].items():
+		print(key, ":", value)
+	print()
 	check = input(">>> ")
 	if check == "1":
 		print(ppl["weapons shop"]["text"])
-		print(ppl["places2"]["options"])
+		for key, value in ppl["places2"]["options"].items():
+			print(key, ":", value)
+		print()
 		check = input(">>> ")
 		if check == "1":
 			print(ppl["item shop"]["text"])
 	if check == "2":
 		print(ppl["item shop"]["text"])
-		print(ppl["places1"]["options"])
+		for key, value in ppl["places1"]["options"].items():
+			print(key, ":", value)
+		print()
 		check = input(">>> ")
 		if check == "1":
 			print(ppl["weapons shop"]["text"])
 
 
 
+playerName = input("What is your name? ")
+print("Welcome, to the Taverna {}!".format(playerName)) 
+
 start_tavern()
 
 
 
+print()
 talkto = input(">>> ")
 while talkto != "1" and talkto != "2" and talkto != "3":
 	talkto = input("Select a person(1, 2, 3): ")
 if talkto == "1":
 	print(ppl["bar keeper"]["text"])
-	print(ppl["tavernpeople1"]["options"])
+	for key, value in ppl["tavernpeople1"]["options"].items():
+		print(key, ":", value)
+	print()
 	talkto = input(">>> ")
 	if talkto == "1":
 		print(ppl["waitress"]["text"])
-		print(ppl["tavernpeople2"]["options"])
+		for key, value in ppl["tavernpeople2"]["options"].items():
+			print(key, ":", value)
+		print()
 		talkto = input(">>> ")
 		if talkto == "1":
 			print(ppl["hooded man"]["text"])
 			go_places()
 	if talkto == "2":
 		print(ppl["hooded man"]["text"])
-		print(ppl["tavernpeople3"]["options"])
+		for key, value in ppl["tavernpeople3"]["options"].items():
+			print(key, ":", value)
+		print()
 		talkto = input(">>> ")
 		if talkto == "1":
 			print(ppl["waitress"]["text"])
 			go_places()
 if  talkto == "2":
 	print(ppl["waitress"]["text"])
-	print(ppl["tavernpeople4"]["options"])
+	for key, value in ppl["tavernpeople4"]["options"].items():
+		print(key, ":", value)
+	print()
 	talkto = input(">>> ")
 	if talkto == "1":
 		print(ppl["bar keeper"]["text"])
-		print(ppl["tavernpeople2"]["options"])
+		for key, value in ppl["tavernpeople2"]["options"].items():
+			print(key, ":", value)
+		print()
 		talkto = input(">>> ")
 		if talkto == "1":
 			print(ppl["hooded man"]["text"])
 			go_places()
 	if talkto == "2":
 		print(ppl["hooded man"]["text"])
-		print(ppl["tavernpeople3"]["options"])
+		for key, value in ppl["tavernpeople3"]["options"].items():
+			print(key, ":", value)
+		print()
 		talkto = input(">>> ")
 		if talkto == "1":
 			print(ppl["waitress"]["text"])
 			go_places()
 if talkto == "3":
 	print(ppl["hooded man"]["text"])
-	print(ppl["tavernpeople6"]["options"])
+	for key, value in ppl["tavernpeople6"]["options"].items():
+		print(key, ":", value)
+	print()
 	talkto = input(">>> ")
 	if talkto == "1":
 		print(ppl["waitress"]["text"])
-		print(ppl["tavernpeople5"]["options"])
+		for key, value in ppl["tavernpeople5"]["options"].items():
+			print(key, ":", value)
+		print()
 		talkto = input(">>> ")
 		if talkto == "1":
 			print(ppl["bar keeper"]["text"])
 			go_places()
 	if talkto == "2":
 		print(ppl["bar keeper"]["text"])
-		print(ppl["tavernpeople3"]["options"])
+		for key, value in ppl["tavernpeople3"]["options"].items():
+			print(key, ":", value)
+		print()
 		talkto = input(">>> ")
 		if talkto == "1":
 			print(ppl["waitress"]["text"])
 			go_places()
 else:
-	goplaces()
+	print("Keep working")
 
 
 	
